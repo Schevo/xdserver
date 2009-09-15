@@ -6,6 +6,7 @@
 .*.swp
 .installed.cfg
 
+*.duruses
 *.egg-info
 bin
 build
