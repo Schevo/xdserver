@@ -2,6 +2,7 @@ import sys
 
 from argparse import ArgumentParser
 
+from durus.connection import Connection
 from durus.error import (
     ConflictError, DurusKeyError, ProtocolError, ReadConflictError)
 from durus.serialize import split_oids
@@ -216,8 +217,12 @@ def main():
     client = Client(args.host, args.port)
     locals = dict(
         __name__='duruses-client-shell',
+        Connection=Connection,
         client=client,
         )
+    print 'Duruses shell'
+    print '  Connection - durus.connection.Connection class'
+    print '  client - duruses.client.Client instance'
     # Clear sys.argv so shell doesn't get confused.
     sys.argv[1:] = []
     try:
