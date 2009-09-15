@@ -27,6 +27,5 @@ setup(
     [console_scripts]
     duruses-server = duruses.server:main
     duruses-client = duruses.client:main
-    duruses-dbnames = duruses.server:main_database_names
     """,
 )

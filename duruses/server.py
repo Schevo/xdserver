@@ -426,13 +426,3 @@ def main():
         )
     scheduler.add(server.dispatch)
     scheduler.run()
-
-
-def main_database_names():
-    parser = ArgumentParser(description='List Durus databases')
-    parser.add_argument(
-        'path', type=str,
-        help='Path containing databases.')
-    args = parser.parse_args()
-    for name in database_names(args.path):
-        print name
