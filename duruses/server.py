@@ -30,6 +30,8 @@ def database_names(path):
 class Server(object):
 
     handlers = {
+        'A': 'handle_enumerate_all',
+        'E': 'handle_enumerate_open',
         'Q': 'handle_quit',
         'V': 'handle_version',
         '.': 'handle_disconnect',
@@ -96,12 +98,37 @@ class Server(object):
     # Server handlers.
 
     @coro
+    def handle_enumerate_all(self, client):
+        log(20, 'Enumerate all')
+        names = self.databases.keys()
+        yield self._handle_enumerate_database_names(client, names)
+
+    @coro
+    def handle_enumerate_open(self, client):
+        log(20, 'Enumerate open')
+        names = [
+            key
+            for key, value
+            in self.databases.iteritems()
+            if value is not None
+            ]
+        yield self._handle_enumerate_database_names(client, names)
+
+    @coro
+    def _handle_enumerate_database_names(self, client, names):
+        yield client.write(int4_to_str(len(names)))
+        for name in names:
+            yield client.write(int4_to_str(len(name)))
+            yield client.write(name)
+        yield client.flush()
+
+    @coro
     def handle_quit(self, client):
         log(20, 'Quit')
         for storage in self.databases.values():
             if storage is not None:
                 storage.close()
-        self.scheduler.shutdown()
+        self.scheduler.stop()
 
     @coro
     def handle_version(self, client):

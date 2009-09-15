@@ -4,7 +4,7 @@ from argparse import ArgumentParser
 
 from durus.error import ProtocolError
 from durus.storage_server import SocketAddress
-from durus.utils import read, write, write_all
+from durus.utils import read, read_int4, write, write_all
 
 from duruses.server import DEFAULT_HOST, DEFAULT_PORT, PROTOCOL
 
@@ -23,6 +23,26 @@ class Client(object):
             write(self.socket, '.')
             self.socket.close()
             self.socket = None
+
+    def enumerate_all(self):
+        write(self.socket, 'A')
+        return list(self._enumerate_database_names())
+
+    def enumerate_open(self):
+        write(self.socket, 'E')
+        return list(self._enumerate_database_names())
+
+    def _enumerate_database_names(self):
+        count = read_int4(self.socket)
+        while count > 0:
+            count -= 1
+            length = read_int4(self.socket)
+            database_name = read(self.socket, length)
+            yield database_name
+
+    def quit(self):
+        write(self.socket, 'Q')
+        self.disconnect()
 
     def server_protocol(self):
         write_all(self.socket, 'V')
