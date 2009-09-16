@@ -6,7 +6,7 @@ from argparse import ArgumentParser
 
 from cogen.core.coroutines import coro
 from cogen.core.schedulers import Scheduler
-from cogen.core.sockets import ConnectionClosed, Socket
+from cogen.core.sockets import ConnectionClosed, Socket, SocketError
 
 from durus.error import ConflictError
 from durus.logger import log, logger, is_logging
@@ -116,7 +116,7 @@ class Server(object):
         while not client.closed:
             try:
                 command = yield client.read(1)
-            except ConnectionClosed:
+            except (ConnectionClosed, SocketError):
                 break
             else:
                 if command in self.handlers:
