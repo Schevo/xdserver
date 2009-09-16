@@ -365,7 +365,7 @@ class Server(object):
         # P
         log(20, 'Pack %s' % db_name)
         storage = self.storages[db_name]
-        if stoage.d_packer is None:
+        if storage.d_packer is None:
             log(20, 'Pack started at %s' % datetime.now())
             storage.d_packer = storage.get_packer()
             if storage.d_packer is None:
