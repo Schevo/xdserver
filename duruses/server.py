@@ -386,7 +386,7 @@ class Server(object):
         invalid = client.invalid[db_name]
         log(8, 'Sync %s', len(invalid))
         yield client.write(int4_to_str(len(invalid)))
-        yield client.write(invalid)
+        yield client.write(join_bytes(invalid))
         invalid.clear()
 
     @coro
