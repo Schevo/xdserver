@@ -242,7 +242,7 @@ class Server(object):
     @coro
     def handle_bulk_read(self, client, db_name):
         # B
-        log(20, 'Bulk read')
+        log(20, 'Bulk read %s' % db_name)
         storage = self.storages[db_name]
         number_of_oids = str_to_int4((yield client.read(4)))
         oid_str_len = 8 * number_of_oids
@@ -254,7 +254,7 @@ class Server(object):
     @coro
     def handle_commit(self, client, db_name):
         # C
-        log(20, 'Commit')
+        log(20, 'Commit %s' % db_name)
         storage = self.storages[db_name]
         self._sync_storage(db_name, storage)
         invalid = client.invalid[db_name]
@@ -322,7 +322,7 @@ class Server(object):
     @coro
     def handle_load(self, client, db_name):
         # L
-        log(20, 'Load')
+        log(20, 'Load %s' % db_name)
         storage = self.storages[db_name]
         oid = yield client.read(8)
         yield self._send_load_response(client, db_name, storage, oid)
@@ -330,7 +330,7 @@ class Server(object):
     @coro
     def handle_new_oids(self, client, db_name):
         # M
-        log(20, 'New OIDs')
+        log(20, 'New OIDs %s' % db_name)
         storage = self.storages[db_name]
         count = ord((yield client.read(1)))
         log(10, 'oids: %s', count)
@@ -340,7 +340,7 @@ class Server(object):
     @coro
     def handle_new_oid(self, client, db_name):
         # N
-        log(20, 'New OID')
+        log(20, 'New OID %s' % db_name)
         storage = self.storages[db_name]
         yield client.write(self._new_oids(client, db_name, storage, 1)[0])
 
