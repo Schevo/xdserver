@@ -9,7 +9,7 @@ from cogen.core.schedulers import Scheduler
 from cogen.core.sockets import ConnectionClosed, Socket
 
 from durus.error import ConflictError
-from durus.logger import log, is_logging
+from durus.logger import log, logger, is_logging
 from durus.file_storage import FileStorage
 from durus.serialize import extract_class_name, split_oids
 from durus.storage_server import (
@@ -416,7 +416,11 @@ def main():
     # parser.add_argument(
     #     '--gcbytes', type=int, default=DEFAULT_GCBYTES,
     #     help='Number of bytes to transfer between packing.')
+    parser.add_argument(
+        '--loglevel', type=int, default=20,
+        help='Logging level.')
     args = parser.parse_args()
+    logger.setLevel(args.loglevel)
     scheduler = Scheduler()
     server = Server(
         scheduler=scheduler,
