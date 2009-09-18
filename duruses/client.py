@@ -27,6 +27,13 @@ from duruses.server import DEFAULT_HOST, DEFAULT_PORT, PROTOCOL
 
 
 class Client(object):
+    """Connects to a duruses server.
+
+    :param host: Host name or IP address of server to connect to.
+    :type host: string
+    :param port: Port server is listening on.
+    :type port: integer
+    """
 
     def __init__(self, host=DEFAULT_HOST, port=DEFAULT_PORT):
         self.address = SocketAddress.new((host, port))
@@ -38,16 +45,25 @@ class Client(object):
     # Server commands.
 
     def disconnect(self):
+        """Disconnect from the server."""
         if self.socket is not None:
             write(self.socket, '.')
             self.socket.close()
             self.socket = None
 
     def list_all(self):
+        """List all databases available on the server.
+
+        :rtype: list of strings
+        """
         write(self.socket, 'A')
         return list(self._enumerate_database_names())
 
     def list_open(self):
+        """List open databases on server.
+
+        :rtype: List of strings
+        """
         write(self.socket, 'E')
         return list(self._enumerate_database_names())
 
@@ -60,10 +76,22 @@ class Client(object):
             yield database_name
 
     def quit(self):
+        """Shut down the server process and disconnect.
+
+        .. todo::
+
+           Determine if it is necessary to keep "quit" in the protocol
+           or if a server should only be shut down by process control
+           on the system that the server is running on.
+        """
         write(self.socket, 'Q')
         self.disconnect()
 
     def server_protocol(self):
+        """Get the protocol used by the server.
+
+        :rtype: 4-byte string
+        """
         write(self.socket, 'V')
         return read(self.socket, 4)
 
@@ -74,23 +102,64 @@ class Client(object):
         write(self.socket, db_name)
 
     def close(self, db_name):
+        """Close the named database.
+
+        :param db_name: Name of database to close.
+        :ptype db_name: string
+        """
         write(self.socket, 'X')
         self._write_database_name(db_name)
 
     def destroy(self, db_name):
+        """Destroy the named database.
+
+        :param db_name: Name of database to destroy.
+        :ptype db_name: string
+
+        .. note::
+
+           The database will not be destroyed if it is currently open.
+
+        .. warning::
+
+           This will permanently delete the file containing the
+           database on the server.
+        """
         write(self.socket, 'D')
         self._write_database_name(db_name)
 
     def open(self, db_name):
+        """Open the named database.
+
+        :param db_name: Name of database to open.
+        :ptype db_name: string
+        """
         write(self.socket, 'O')
         self._write_database_name(db_name)
 
     def storage(self, db_name):
+        """Return a Durus storage object for the named database.
+
+        The database is opened on the server if it was not open
+        already.
+
+        :param db_name: Name of database to return storage object for.
+        :ptype db_name: string
+        :rtype: :class:`ClientStorage`
+        """
         self.open(db_name)
         return ClientStorage(self, db_name)
 
 
 class ClientStorage(Storage):
+    """Durus storage for a Duruses database.
+
+    Follows the :class:`durus.storage.Storage` API.
+
+    Please use :meth:`~Client.storage` to create
+    storage instances, rather than creating instances of this class
+    directly.
+    """
 
     def __init__(self, client, db_name):
         self.client = client

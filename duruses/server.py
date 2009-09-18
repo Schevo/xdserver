@@ -60,6 +60,11 @@ class ConnectedClient(object):
 
 
 class Server(object):
+    """Provides access to databases for duruses clients.
+
+    In most cases your code will not use this class directly.  Use
+    :program:`duruses-server` instead; see :doc:`server`.
+    """
 
     handlers = {
         'A': 'handle_enumerate_all',
