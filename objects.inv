@@ -3,3 +3,15 @@
 # Version: 3.9
 duruses.server mod api.html
 duruses.client mod api.html
+duruses.client.Client.server_protocol method api.html
+duruses.server.Server class api.html
+duruses.client.Client class api.html
+duruses.client.Client.disconnect method api.html
+duruses.client.Client.storage method api.html
+duruses.client.Client.list_all method api.html
+duruses.client.ClientStorage class api.html
+duruses.client.Client.open method api.html
+duruses.client.Client.quit method api.html
+duruses.client.Client.list_open method api.html
+duruses.client.Client.close method api.html
+duruses.client.Client.destroy method api.html
