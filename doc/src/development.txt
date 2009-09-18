@@ -1,0 +1,24 @@
+=============
+ Development
+=============
+
+
+Getting the latest code
+=======================
+
+Using `git <http://git-scm.com/>`__, clone the duruses repository:
+
+.. code-block:: console
+
+   $ git clone git://github.com/11craft/duruses.git
+
+You can view source code online at the `duruses github repository page
+<http://github.com/11craft/duruses>`__.
+
+
+Contributing code
+=================
+
+Our preferred way of receiving changes is for you to `fork the project
+and submit a pull request on GitHub
+<http://help.github.com/forking/>`__.
