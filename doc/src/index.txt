@@ -1,0 +1,27 @@
+===================================
+ Welcome to Duruses' documentation
+===================================
+
+:Author: Matthew Scott <matt@11craft.com>
+:Date: |today|
+:Description: Durus Extended Server
+
+
+.. toctree::
+   :maxdepth: 2
+
+   introduction
+   server
+   client
+
+
+Indices and tables
+==================
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`
+
+
+.. todolist::
+
