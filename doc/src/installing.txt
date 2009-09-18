@@ -1,0 +1,20 @@
+Requirements
+============
+
+- Python 2.6+
+
+- setuptools
+
+  If you do not have setuptools, follow the `setuptools installation
+  instructions <http://pypi.python.org/pypi/setuptools>`__.
+
+
+Installation
+============
+
+Use easy_install to install the :program:`duruses` package and its
+dependencies:
+
+.. code-block:: console
+
+    $ easy_install duruses

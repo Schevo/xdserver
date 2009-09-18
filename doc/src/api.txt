@@ -1,0 +1,21 @@
+===============
+ API Reference
+===============
+
+
+duruses.client
+==============
+
+.. automodule:: duruses.client
+   :members:
+   :inherited-members:
+   :show-inheritance:
+
+
+duruses.server
+==============
+
+.. automodule:: duruses.server
+   :members:
+   :inherited-members:
+   :show-inheritance:

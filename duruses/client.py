@@ -1,3 +1,8 @@
+__all__ = [
+    'Client',
+    'ClientStorage',
+    ]
+
 import sys
 
 from argparse import ArgumentParser
@@ -211,7 +216,7 @@ def main():
         '--host', type=str, default=DEFAULT_HOST,
         help='Host to connect to.')
     parser.add_argument(
-        '--port', type=str, default=DEFAULT_PORT,
+        '--port', type=int, default=DEFAULT_PORT,
         help='Port to connect to.')
     args = parser.parse_args()
     client = Client(args.host, args.port)

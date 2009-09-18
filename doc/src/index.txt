@@ -7,12 +7,20 @@
 :Description: Durus Extended Server
 
 
+.. include:: ../../README.txt
+
+
+Contents
+========
+
 .. toctree::
    :maxdepth: 2
 
-   introduction
+   installing
    server
    client
+   api
+   license
 
 
 Indices and tables

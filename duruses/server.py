@@ -1,3 +1,7 @@
+__all__ = [
+    'Server',
+    ]
+
 from datetime import datetime
 import os
 import sys
@@ -39,7 +43,7 @@ def database_names(path):
             yield name
 
 
-class Client(object):
+class ConnectedClient(object):
 
     def __init__(self, client_socket):
         f = self.f = client_socket.makefile()
@@ -106,7 +110,7 @@ class Server(object):
 
     @coro
     def serve_to_client(self, client_socket):
-        client = Client(client_socket)
+        client = ConnectedClient(client_socket)
         # Initialize per-storage state for the new client.
         client.invalid = dict(
             (db_name, set()) for db_name in self.storages)
@@ -411,7 +415,7 @@ def main():
         '--host', type=str, default=DEFAULT_HOST,
         help='Interface to serve on.')
     parser.add_argument(
-        '--port', type=str, default=DEFAULT_PORT,
+        '--port', type=int, default=DEFAULT_PORT,
         help='Port to serve on.')
     # parser.add_argument(
     #     '--gcbytes', type=int, default=DEFAULT_GCBYTES,

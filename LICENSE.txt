@@ -1,4 +1,4 @@
-Copyright (c) 2001-2009 ElevenCraft Inc.
+duruses is Copyright (c) 2009 ElevenCraft Inc.
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
@@ -18,3 +18,13 @@ NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
 LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
 OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+
+Durus
+=====
+
+Durus is copyright (c) 2009 Corporation for National Research
+Initiatives.
+
+See `CNRI Open Source License Agreement For Durus-3.9
+<http://www.mems-exchange.org/software/durus/Durus-3.9.tar.gz/Durus-3.9/LICENSE.txt>`__.

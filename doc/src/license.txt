@@ -1,0 +1,6 @@
+===================
+ License agreement
+===================
+
+
+.. include:: ../../LICENSE.txt

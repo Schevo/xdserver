@@ -6,11 +6,17 @@ version = '3.9.0'
 
 DESCRIPTION = open(
     os.path.join(os.path.dirname(__file__), 'README.txt')
-    ).read()
+    ).read() + """
+
+A `development version`_ is available.
+
+.. _development version:
+   http://github.com/11craft/duruses/zipball/master#egg=duruses-dev
+"""
 
 
 setup(
-    name='Duruses',
+    name='duruses',
     version=version,
     description="Durus Extended Server",
     long_description=DESCRIPTION,

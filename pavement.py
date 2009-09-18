@@ -5,6 +5,7 @@ except ImportError:
     pass
 else:
     from paver.easy import *
+    import paver.doctools
     import paver.misctasks
 
 
@@ -26,11 +27,24 @@ else:
 
 
     @task
-    @needs(['paver.doctools.cog',
-            'paver.doctools.html',
-            'paver.doctools.uncog'])
+    def clean():
+        p = path('doc/build/html/.buildinfo')
+        if p.exists():
+            p.unlink()
+
+
+    @task
     def html():
-        pass
+        # Clean out dirs that would be in the way when renaming
+        # _sources and _static.
+        for dirname in ['sources', 'static']:
+            p = path('doc/build/html') / dirname
+            if p.exists():
+                p.rmtree()
+        # Regenerate docs.
+        paver.doctools.cog()
+        paver.doctools.html()
+        paver.doctools.uncog()
 
 
     @task
