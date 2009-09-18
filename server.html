@@ -1,0 +1,174 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Server &mdash; duruses v3.9.0dev-20090918 documentation</title>
+    <link rel="stylesheet" href="static/default.css" type="text/css" />
+    <link rel="stylesheet" href="static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '3.9.0dev-20090918',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="static/jquery.js"></script>
+    <script type="text/javascript" src="static/doctools.js"></script>
+    <link rel="top" title="duruses v3.9.0dev-20090918 documentation" href="index.html" />
+    <link rel="next" title="Client" href="client.html" />
+    <link rel="prev" title="Requirements" href="installing.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="modindex.html" title="Global Module Index"
+             accesskey="M">modules</a> |</li>
+        <li class="right" >
+          <a href="client.html" title="Client"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="installing.html" title="Requirements"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">duruses v3.9.0dev-20090918 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="server">
+<h1>Server<a class="headerlink" href="#server" title="Permalink to this headline">¶</a></h1>
+<p>Run <strong>duruses-server</strong> to allow clients to access a set of
+databases stored in a directory.</p>
+<div class="section" id="prepare-a-directory-for-data-storage">
+<h2>Prepare a directory for data storage<a class="headerlink" href="#prepare-a-directory-for-data-storage" title="Permalink to this headline">¶</a></h2>
+<p>Create a directory to store Durus database files.</p>
+<p>Consider using the <tt class="docutils literal"><span class="pre">.duruses</span></tt> extension to help you remember
+that it contains Durus database files.</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">$</span> mkdir appdata.duruses
+</pre></div>
+</div>
+</div>
+<div class="section" id="starting-a-server">
+<h2>Starting a server<a class="headerlink" href="#starting-a-server" title="Permalink to this headline">¶</a></h2>
+<p>Run <strong>duruses-server</strong>, giving it the name of the directory to
+serve from.  The program will respond with the host and port it is
+listening on:</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">$</span> duruses-server appdata.duruses
+<span class="go">Listening on 127.0.0.1:22972</span>
+</pre></div>
+</div>
+<p>Override the host and/or port by using <em class="xref">--host</em> and
+<em class="xref">--port</em>.  For example, you can listen on all network
+interfaces at port 3333:</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">$</span> duruses-server --host<span class="o">=</span>0.0.0.0 --port<span class="o">=</span>3333 appdata.duruses
+<span class="go">Listening on 0.0.0.0:3333</span>
+</pre></div>
+</div>
+<p>Quiet log output by setting <em class="xref">--loglevel</em>:</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">$</span> duruses-server --loglevel<span class="o">=</span>100
+</pre></div>
+</div>
+<div class="admonition-todo admonition " id="todo-4">
+<p class="first admonition-title">Todo</p>
+<p class="last">Replace <em class="xref">--loglevel</em> with <em class="xref">--verbose</em> and
+<em class="xref">--quiet</em>.</p>
+</div>
+</div>
+<div class="section" id="stopping-a-server">
+<h2>Stopping a server<a class="headerlink" href="#stopping-a-server" title="Permalink to this headline">¶</a></h2>
+<p>Press <tt class="docutils literal"><span class="pre">Control-C</span></tt> where duruses-server is running.  Duruses will
+disconnect all connected clients and stop listening for new
+connections.</p>
+</div>
+<div class="section" id="running-a-server-in-the-background">
+<h2>Running a server in the background<a class="headerlink" href="#running-a-server-in-the-background" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-todo admonition " id="todo-5">
+<p class="first admonition-title">Todo</p>
+<p class="last">Describe methods for running a server in the background.</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3><a href="index.html">Table Of Contents</a></h3>
+            <ul>
+<li><a class="reference external" href="">Server</a><ul>
+<li><a class="reference external" href="#prepare-a-directory-for-data-storage">Prepare a directory for data storage</a></li>
+<li><a class="reference external" href="#starting-a-server">Starting a server</a></li>
+<li><a class="reference external" href="#stopping-a-server">Stopping a server</a></li>
+<li><a class="reference external" href="#running-a-server-in-the-background">Running a server in the background</a></li>
+</ul>
+</li>
+</ul>
+
+            <h4>Previous topic</h4>
+            <p class="topless"><a href="installing.html"
+                                  title="previous chapter">Requirements</a></p>
+            <h4>Next topic</h4>
+            <p class="topless"><a href="client.html"
+                                  title="next chapter">Client</a></p>
+            <h3>This Page</h3>
+            <ul class="this-page-menu">
+              <li><a href="sources/server.txt"
+                     rel="nofollow">Show Source</a></li>
+            </ul>
+          <div id="searchbox" style="display: none">
+            <h3>Quick search</h3>
+              <form class="search" action="search.html" method="get">
+                <input type="text" name="q" size="18" />
+                <input type="submit" value="Go" />
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+              <p class="searchtip" style="font-size: 90%">
+              Enter search terms or a module, class or function name.
+              </p>
+          </div>
+          <script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="modindex.html" title="Global Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="client.html" title="Client"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="installing.html" title="Requirements"
+             >previous</a> |</li>
+        <li><a href="index.html">duruses v3.9.0dev-20090918 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+      &copy; Copyright 2009, ElevenCraft Inc..
+      Last updated on Sep 18, 2009.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 0.6.3.
+    </div>
+  </body>
+</html>

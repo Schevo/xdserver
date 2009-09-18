@@ -1,0 +1,5 @@
+# Sphinx inventory version 1
+# Project: duruses
+# Version: 3.9
+duruses.server mod api.html
+duruses.client mod api.html

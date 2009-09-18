@@ -1,0 +1,199 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Client &mdash; duruses v3.9.0dev-20090918 documentation</title>
+    <link rel="stylesheet" href="static/default.css" type="text/css" />
+    <link rel="stylesheet" href="static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '3.9.0dev-20090918',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="static/jquery.js"></script>
+    <script type="text/javascript" src="static/doctools.js"></script>
+    <link rel="top" title="duruses v3.9.0dev-20090918 documentation" href="index.html" />
+    <link rel="next" title="API Reference" href="api.html" />
+    <link rel="prev" title="Server" href="server.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="modindex.html" title="Global Module Index"
+             accesskey="M">modules</a> |</li>
+        <li class="right" >
+          <a href="api.html" title="API Reference"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="server.html" title="Server"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">duruses v3.9.0dev-20090918 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="client">
+<h1>Client<a class="headerlink" href="#client" title="Permalink to this headline">¶</a></h1>
+<p>Connect to a Duruses server using a Python shell with
+<strong>duruses-client</strong>.  Connect to a Duruses server in your own
+code with <tt class="xref docutils literal"><span class="pre">duruses.client.Client</span></tt>.</p>
+<p>In this section you&#8217;ll learn how to connect using the command-line or
+in your own code, and you&#8217;ll see some basic examples of how to use
+databases once connected.</p>
+<p>For more complete information, see <a class="reference external" href="api.html"><em>API Reference</em></a>.</p>
+<div class="section" id="connect-using-the-command-line">
+<h2>Connect using the command-line<a class="headerlink" href="#connect-using-the-command-line" title="Permalink to this headline">¶</a></h2>
+<p>Run <strong>duruses-client</strong>, which connects to a Duruses server,
+then provides a Python shell giving you access to useful objects:</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">$</span> duruses-client
+<span class="go">Duruses shell</span>
+<span class="go">  Connection - duruses.connection.Connection class</span>
+<span class="go">  client - duruses.client.Client instance</span>
+<span class="gp">&gt;</span>&gt;&gt;
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>By default, <strong>duruses-client</strong> connects to 127.0.0.1 on port
+22972.  Connect to a different host and/or port by using
+<em class="xref">--host</em> and <em class="xref">--port</em>, as in this example:</p>
+<div class="last highlight-console"><div class="highlight"><pre><span class="gp">$</span> duruses-client --host<span class="o">=</span>11.22.33.44 --port<span class="o">=</span>3333
+</pre></div>
+</div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>If you have <a class="reference external" href="http://ipython.scipy.org/">IPython</a> installed, <strong>duruses-client</strong> will favor
+that over the default Python shell:</p>
+<div class="last highlight-console"><div class="highlight"><pre><span class="gp">$</span> duruses-client
+<span class="go">Duruses shell</span>
+<span class="go">  Connection - duruses.connection.Connection class</span>
+<span class="go">  client - duruses.client.Client instance</span>
+<span class="go">In [1]:</span>
+</pre></div>
+</div>
+</div>
+<p>In the shell, use the <tt class="xref docutils literal"><span class="pre">client</span></tt> object&#8217;s
+<tt class="xref docutils literal"><span class="pre">storage()</span></tt> method to get a
+<tt class="xref docutils literal"><span class="pre">durus.client.ClientStorage</span></tt> instance for a named database.
+Once you have that, create a <tt class="xref docutils literal"><span class="pre">Connection</span></tt>
+instance:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">conn</span> <span class="o">=</span> <span class="n">Connection</span><span class="p">(</span><span class="n">client</span><span class="o">.</span><span class="n">storage</span><span class="p">(</span><span class="s">&#39;userdata&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>With the <tt class="xref docutils literal"><span class="pre">Connection</span></tt> instance, use the
+standard Durus API to operate on the database:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">root</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">get_root</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">root</span><span class="p">[</span><span class="s">&#39;users&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">root</span><span class="p">[</span><span class="s">&#39;groups&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">conn</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="connect-in-your-own-code">
+<h2>Connect in your own code<a class="headerlink" href="#connect-in-your-own-code" title="Permalink to this headline">¶</a></h2>
+<p>Create a <tt class="xref docutils literal"><span class="pre">Client</span></tt> instance, then perform
+operations on it as above in <a class="reference internal" href="#connect-using-the-command-line">Connect using the command-line</a>:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">durus.connection</span> <span class="kn">import</span> <span class="n">Connection</span>
+<span class="kn">from</span> <span class="nn">duruses.client</span> <span class="kn">import</span> <span class="n">Client</span>
+
+<span class="c"># Connect to default server.</span>
+<span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">()</span>
+
+<span class="c"># Work with the &quot;userdata&quot; database.</span>
+<span class="n">conn</span> <span class="o">=</span> <span class="n">Connection</span><span class="p">(</span><span class="n">client</span><span class="o">.</span><span class="n">storage</span><span class="p">(</span><span class="s">&#39;userdata&#39;</span><span class="p">))</span>
+
+<span class="c"># Create some objects and commit them in a transaction.</span>
+<span class="n">root</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">get_root</span><span class="p">()</span>
+<span class="n">root</span><span class="p">[</span><span class="s">&#39;users&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="n">root</span><span class="p">[</span><span class="s">&#39;groups&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="n">conn</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3><a href="index.html">Table Of Contents</a></h3>
+            <ul>
+<li><a class="reference external" href="">Client</a><ul>
+<li><a class="reference external" href="#connect-using-the-command-line">Connect using the command-line</a></li>
+<li><a class="reference external" href="#connect-in-your-own-code">Connect in your own code</a></li>
+</ul>
+</li>
+</ul>
+
+            <h4>Previous topic</h4>
+            <p class="topless"><a href="server.html"
+                                  title="previous chapter">Server</a></p>
+            <h4>Next topic</h4>
+            <p class="topless"><a href="api.html"
+                                  title="next chapter">API Reference</a></p>
+            <h3>This Page</h3>
+            <ul class="this-page-menu">
+              <li><a href="sources/client.txt"
+                     rel="nofollow">Show Source</a></li>
+            </ul>
+          <div id="searchbox" style="display: none">
+            <h3>Quick search</h3>
+              <form class="search" action="search.html" method="get">
+                <input type="text" name="q" size="18" />
+                <input type="submit" value="Go" />
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+              <p class="searchtip" style="font-size: 90%">
+              Enter search terms or a module, class or function name.
+              </p>
+          </div>
+          <script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="modindex.html" title="Global Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="api.html" title="API Reference"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="server.html" title="Server"
+             >previous</a> |</li>
+        <li><a href="index.html">duruses v3.9.0dev-20090918 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+      &copy; Copyright 2009, ElevenCraft Inc..
+      Last updated on Sep 18, 2009.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 0.6.3.
+    </div>
+  </body>
+</html>

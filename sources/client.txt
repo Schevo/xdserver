@@ -1,0 +1,91 @@
+========
+ Client
+========
+
+Connect to a Duruses server using a Python shell with
+:program:`duruses-client`.  Connect to a Duruses server in your own
+code with :class:`duruses.client.Client`.
+
+In this section you'll learn how to connect using the command-line or
+in your own code, and you'll see some basic examples of how to use
+databases once connected.
+
+For more complete information, see :doc:`api`.
+
+
+Connect using the command-line
+==============================
+
+Run :program:`duruses-client`, which connects to a Duruses server,
+then provides a Python shell giving you access to useful objects:
+
+.. code-block:: console
+
+    $ duruses-client
+    Duruses shell
+      Connection - duruses.connection.Connection class
+      client - duruses.client.Client instance
+    >>>
+
+.. note::
+
+   By default, :program:`duruses-client` connects to 127.0.0.1 on port
+   22972.  Connect to a different host and/or port by using
+   :option:`--host` and :option:`--port`, as in this example:
+
+   .. code-block:: console
+
+      $ duruses-client --host=11.22.33.44 --port=3333
+
+.. note::
+
+   If you have IPython_ installed, :program:`duruses-client` will favor
+   that over the default Python shell:
+
+   .. code-block:: console
+
+      $ duruses-client
+      Duruses shell
+        Connection - duruses.connection.Connection class
+        client - duruses.client.Client instance
+      In [1]:
+
+.. _IPython: http://ipython.scipy.org/
+
+In the shell, use the :obj:`client` object's
+:meth:`~duruses.client.Client.storage` method to get a
+:class:`durus.client.ClientStorage` instance for a named database.
+Once you have that, create a :class:`~durus.connection.Connection`
+instance::
+
+    >>> conn = Connection(client.storage('userdata'))
+
+With the :class:`~durus.connection.Connection` instance, use the
+standard Durus API to operate on the database::
+
+    >>> root = conn.get_root()
+    >>> root['users'] = {}
+    >>> root['groups'] = {}
+    >>> conn.commit()
+
+
+Connect in your own code
+========================
+
+Create a :class:`~duruses.client.Client` instance, then perform
+operations on it as above in `Connect using the command-line`_::
+
+    from durus.connection import Connection
+    from duruses.client import Client
+
+    # Connect to default server.
+    client = Client()
+
+    # Work with the "userdata" database.
+    conn = Connection(client.storage('userdata'))
+
+    # Create some objects and commit them in a transaction.
+    root = conn.get_root()
+    root['users'] = {}
+    root['groups'] = {}
+    conn.commit()

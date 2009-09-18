@@ -1,0 +1,35 @@
+===================================
+ Welcome to Duruses' documentation
+===================================
+
+:Author: Matthew Scott <matt@11craft.com>
+:Date: |today|
+:Description: Durus Extended Server
+
+
+.. include:: ../../README.txt
+
+
+Contents
+========
+
+.. toctree::
+   :maxdepth: 2
+
+   installing
+   server
+   client
+   api
+   license
+
+
+Indices and tables
+==================
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`
+
+
+.. todolist::
+

@@ -1,1 +1,183 @@
-initial page
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Welcome to Duruses’ documentation &mdash; duruses v3.9.0dev-20090918 documentation</title>
+    <link rel="stylesheet" href="static/default.css" type="text/css" />
+    <link rel="stylesheet" href="static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '3.9.0dev-20090918',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="static/jquery.js"></script>
+    <script type="text/javascript" src="static/doctools.js"></script>
+    <link rel="top" title="duruses v3.9.0dev-20090918 documentation" href="" />
+    <link rel="next" title="Requirements" href="installing.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="modindex.html" title="Global Module Index"
+             accesskey="M">modules</a> |</li>
+        <li class="right" >
+          <a href="installing.html" title="Requirements"
+             accesskey="N">next</a> |</li>
+        <li><a href="">duruses v3.9.0dev-20090918 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="welcome-to-duruses-documentation">
+<h1>Welcome to Duruses&#8217; documentation<a class="headerlink" href="#welcome-to-duruses-documentation" title="Permalink to this headline">¶</a></h1>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Author:</th><td class="field-body">Matthew Scott &lt;<a class="reference external" href="mailto:matt&#37;&#52;&#48;11craft&#46;com">matt<span>&#64;</span>11craft<span>&#46;</span>com</a>&gt;</td>
+</tr>
+<tr class="field"><th class="field-name">Date:</th><td class="field-body">September 18, 2009</td>
+</tr>
+<tr class="field"><th class="field-name">Description:</th><td class="field-body">Durus Extended Server</td>
+</tr>
+</tbody>
+</table>
+<p><a class="reference external" href="http://mems-exchange.org/software/durus/">Durus</a> is an object database for Python.  It allows multiple clients
+to operate on a single database via a wire protocol, and allows one
+process at a time to directly access a database file.</p>
+<p>Duruses is an extended server for Durus providing these enhancements:</p>
+<ul class="simple">
+<li>Serve multiple databases with one server process.  Operate on
+multiple databases with one connection.</li>
+<li>Asynchronous server, using <a class="reference external" href="http://code.google.com/p/cogen/">cogen</a> to offer platform-specific
+performance enhancements.</li>
+</ul>
+<div class="section" id="contents">
+<h2>Contents<a class="headerlink" href="#contents" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="installing.html">Requirements</a></li>
+<li class="toctree-l1"><a class="reference external" href="installing.html#installation">Installation</a></li>
+<li class="toctree-l1"><a class="reference external" href="server.html">Server</a><ul>
+<li class="toctree-l2"><a class="reference external" href="server.html#prepare-a-directory-for-data-storage">Prepare a directory for data storage</a></li>
+<li class="toctree-l2"><a class="reference external" href="server.html#starting-a-server">Starting a server</a></li>
+<li class="toctree-l2"><a class="reference external" href="server.html#stopping-a-server">Stopping a server</a></li>
+<li class="toctree-l2"><a class="reference external" href="server.html#running-a-server-in-the-background">Running a server in the background</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference external" href="client.html">Client</a><ul>
+<li class="toctree-l2"><a class="reference external" href="client.html#connect-using-the-command-line">Connect using the command-line</a></li>
+<li class="toctree-l2"><a class="reference external" href="client.html#connect-in-your-own-code">Connect in your own code</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference external" href="api.html">API Reference</a><ul>
+<li class="toctree-l2"><a class="reference external" href="api.html#module-duruses.client">duruses.client</a></li>
+<li class="toctree-l2"><a class="reference external" href="api.html#module-duruses.server">duruses.server</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference external" href="license.html">License agreement</a><ul>
+<li class="toctree-l2"><a class="reference external" href="license.html#durus">Durus</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="indices-and-tables">
+<h2>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference external" href="genindex.html"><em>Index</em></a></li>
+<li><a class="reference external" href="modindex.html"><em>Module Index</em></a></li>
+<li><a class="reference external" href="search.html"><em>Search Page</em></a></li>
+</ul>
+<div class="admonition-todo admonition ">
+<p class="first admonition-title">Todo</p>
+<p class="last">Replace <em class="xref">--loglevel</em> with <em class="xref">--verbose</em> and
+<em class="xref">--quiet</em>.</p>
+</div>
+<p>(The original entry is located in server.txt, line 49 and can be found <a class="reference external" href="server.html#todo-4"><em>here</em></a>.)</p>
+<div class="admonition-todo admonition ">
+<p class="first admonition-title">Todo</p>
+<p class="last">Describe methods for running a server in the background.</p>
+</div>
+<p>(The original entry is located in server.txt, line 66 and can be found <a class="reference external" href="server.html#todo-5"><em>here</em></a>.)</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3><a href="">Table Of Contents</a></h3>
+            <ul>
+<li><a class="reference external" href="">Welcome to Duruses&#8217; documentation</a><ul>
+<li><a class="reference external" href="#contents">Contents</a><ul>
+</ul>
+</li>
+<li><a class="reference external" href="#indices-and-tables">Indices and tables</a></li>
+</ul>
+</li>
+</ul>
+
+            <h4>Next topic</h4>
+            <p class="topless"><a href="installing.html"
+                                  title="next chapter">Requirements</a></p>
+            <h3>This Page</h3>
+            <ul class="this-page-menu">
+              <li><a href="sources/index.txt"
+                     rel="nofollow">Show Source</a></li>
+            </ul>
+          <div id="searchbox" style="display: none">
+            <h3>Quick search</h3>
+              <form class="search" action="search.html" method="get">
+                <input type="text" name="q" size="18" />
+                <input type="submit" value="Go" />
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+              <p class="searchtip" style="font-size: 90%">
+              Enter search terms or a module, class or function name.
+              </p>
+          </div>
+          <script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="modindex.html" title="Global Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="installing.html" title="Requirements"
+             >next</a> |</li>
+        <li><a href="">duruses v3.9.0dev-20090918 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+      &copy; Copyright 2009, ElevenCraft Inc..
+      Last updated on Sep 18, 2009.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 0.6.3.
+    </div>
+  </body>
+</html>
