@@ -18,7 +18,7 @@ A `development version`_ is available.
 setup(
     name='xdserver',
     version=version,
-    description="Durus Extended Server",
+    description="Extended Durus Server",
     long_description=DESCRIPTION,
     classifiers=[],
     keywords='',

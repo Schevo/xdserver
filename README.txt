@@ -4,7 +4,8 @@ process at a time to directly access a database file.
 
 .. _Durus: http://mems-exchange.org/software/durus/
 
-xdserver is an extended server for Durus providing these enhancements:
+xdserver is a client/server extension for Durus providing these
+enhancements:
 
 - Serve multiple databases with one server process.  Operate on
   multiple databases with one connection.
