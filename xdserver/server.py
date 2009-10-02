@@ -60,10 +60,10 @@ class ConnectedClient(object):
 
 
 class Server(object):
-    """Provides access to databases for duruses clients.
+    """Provides access to databases for xdserver clients.
 
     In most cases your code will not use this class directly.  Use
-    :program:`duruses-server` instead; see :doc:`server`.
+    :program:`xdserver` instead; see :doc:`server`.
     """
 
     handlers = {

@@ -3,15 +3,15 @@
 ===============
 
 
-duruses.client
-==============
+xdserver.client
+===============
 
-.. automodule:: duruses.client
+.. automodule:: xdserver.client
    :members:
 
 
-duruses.server
-==============
+xdserver.server
+===============
 
-.. automodule:: duruses.server
+.. automodule:: xdserver.server
    :members:

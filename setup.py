@@ -11,12 +11,12 @@ DESCRIPTION = open(
 A `development version`_ is available.
 
 .. _development version:
-   http://github.com/11craft/duruses/zipball/master#egg=duruses-dev
+   http://github.com/11craft/xdserver/zipball/master#egg=xdserver-dev
 """
 
 
 setup(
-    name='duruses',
+    name='xdserver',
     version=version,
     description="Durus Extended Server",
     long_description=DESCRIPTION,
@@ -24,7 +24,7 @@ setup(
     keywords='',
     author='ElevenCraft Inc.',
     author_email='matt@11craft.com',
-    url='http://11craft.github.com/duruses/',
+    url='http://11craft.github.com/xdserver/',
     license='MIT',
     packages=find_packages(exclude=['ez_setup', 'examples', 'tests']),
     include_package_data=True,
@@ -39,7 +39,7 @@ setup(
         ],
     entry_points="""
     [console_scripts]
-    duruses-server = duruses.server:main
-    duruses-client = duruses.client:main
+    xdserver = xdserver.server:main
+    xdclient = xdserver.client:main
     """,
     )

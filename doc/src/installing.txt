@@ -12,9 +12,9 @@ Requirements
 Installation
 ============
 
-Use easy_install to install the :program:`duruses` package and its
+Use easy_install to install the :program:`xdserver` package and its
 dependencies:
 
 .. code-block:: console
 
-    $ easy_install duruses
+    $ easy_install xdserver

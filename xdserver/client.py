@@ -23,11 +23,11 @@ from durus.utils import (
     read, read_int4, write, write_all, write_int4, write_int4_str,
     )
 
-from duruses.server import DEFAULT_HOST, DEFAULT_PORT, PROTOCOL
+from xdserver.server import DEFAULT_HOST, DEFAULT_PORT, PROTOCOL
 
 
 class Client(object):
-    """Connects to a duruses server.
+    """Connects to a xdserver server.
 
     :param host: Host name or IP address of server to connect to.
     :type host: string
@@ -152,7 +152,7 @@ class Client(object):
 
 
 class ClientStorage(Storage):
-    """Durus storage for a Duruses database.
+    """Durus storage for a xdserver database.
 
     Follows the :class:`durus.storage.Storage` API.
 
@@ -290,13 +290,13 @@ def main():
     args = parser.parse_args()
     client = Client(args.host, args.port)
     locals = dict(
-        __name__='duruses-client-shell',
+        __name__='xdclient-shell',
         Connection=Connection,
         client=client,
         )
-    print 'Duruses shell'
+    print 'xdserver shell'
     print '  Connection - durus.connection.Connection class'
-    print '  client - duruses.client.Client instance'
+    print '  client - xdserver.client.Client instance'
     # Clear sys.argv so shell doesn't get confused.
     sys.argv[1:] = []
     try:

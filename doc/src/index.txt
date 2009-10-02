@@ -1,5 +1,5 @@
 ===================================
- Welcome to Duruses' documentation
+ Welcome to xdserver' documentation
 ===================================
 
 :Author: Matthew Scott <matt@11craft.com>
@@ -20,6 +20,7 @@ Contents
    server
    client
    api
+   changes
    development
    license
 

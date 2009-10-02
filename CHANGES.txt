@@ -1,0 +1,9 @@
+=========
+ Changes
+=========
+
+3.9.0 to 3.9.1
+==============
+
+- Name changed from "xdserver" (Durus Extended Server) to "xdserver"
+  (Extended Durus Server) to avoid dilution of the Durus name.
