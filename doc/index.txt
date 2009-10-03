@@ -7,7 +7,7 @@
 :Description: Durus Extended Server
 
 
-.. include:: ../../README.txt
+.. include:: ../README.txt
 
 
 Contents

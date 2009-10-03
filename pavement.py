@@ -11,8 +11,8 @@ else:
 
     options(
         cog=Bunch(
-            basdir='doc/src',
-            includedir='doc/src',
+            basedir='doc',
+            includedir='doc',
             pattern='*.txt',
             beginspec='<==',
             endspec='==>',
@@ -21,7 +21,7 @@ else:
         sphinx=Bunch(
             docroot='doc',
             builddir='build',
-            sourcedir='src',
+            sourcedir='.',
         ),
     )
 

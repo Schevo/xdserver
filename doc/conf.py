@@ -6,7 +6,7 @@ import pkginfo
 
 # Package info
 
-def _egg_info(path_to_egg='../../'):
+def _egg_info(path_to_egg='../'):
     path_to_egg = os.path.join(
         os.path.dirname(__file__), path_to_egg)
     egg_info = pkginfo.Develop(path_to_egg)
