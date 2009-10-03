@@ -5,13 +5,13 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Client &mdash; duruses v3.9.0 documentation</title>
+    <title>Client &mdash; xdserver v3.9.1 documentation</title>
     <link rel="stylesheet" href="static/default.css" type="text/css" />
     <link rel="stylesheet" href="static/pygments.css" type="text/css" />
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '',
-        VERSION:     '3.9.0',
+        VERSION:     '3.9.1',
         COLLAPSE_MODINDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -19,7 +19,7 @@
     </script>
     <script type="text/javascript" src="static/jquery.js"></script>
     <script type="text/javascript" src="static/doctools.js"></script>
-    <link rel="top" title="duruses v3.9.0 documentation" href="index.html" />
+    <link rel="top" title="xdserver v3.9.1 documentation" href="index.html" />
     <link rel="next" title="API Reference" href="api.html" />
     <link rel="prev" title="Server" href="server.html" /> 
   </head>
@@ -39,7 +39,7 @@
         <li class="right" >
           <a href="server.html" title="Server"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">duruses v3.9.0 documentation</a> &raquo;</li> 
+        <li><a href="index.html">xdserver v3.9.1 documentation</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -50,47 +50,47 @@
             
   <div class="section" id="client">
 <h1>Client<a class="headerlink" href="#client" title="Permalink to this headline">¶</a></h1>
-<p>Connect to a Duruses server using a Python shell with
-<strong>duruses-client</strong>.  Connect to a Duruses server in your own
-code with <a title="duruses.client.Client" class="reference external" href="api.html#duruses.client.Client"><tt class="xref docutils literal"><span class="pre">duruses.client.Client</span></tt></a>.</p>
+<p>Connect to a xdserver server using a Python shell with
+<strong>xdclient</strong>.  Connect to a xdserver server in your own
+code with <a title="xdserver.client.Client" class="reference external" href="api.html#xdserver.client.Client"><tt class="xref docutils literal"><span class="pre">xdserver.client.Client</span></tt></a>.</p>
 <p>In this section you&#8217;ll learn how to connect using the command-line or
 in your own code, and you&#8217;ll see some basic examples of how to use
 databases once connected.</p>
 <p>For more complete information, see <a class="reference external" href="api.html"><em>API Reference</em></a>.</p>
 <div class="section" id="connect-using-the-command-line">
 <h2>Connect using the command-line<a class="headerlink" href="#connect-using-the-command-line" title="Permalink to this headline">¶</a></h2>
-<p>Run <strong>duruses-client</strong>, which connects to a Duruses server,
+<p>Run <strong>xdclient</strong>, which connects to a xdserver server,
 then provides a Python shell giving you access to useful objects:</p>
-<div class="highlight-console"><div class="highlight"><pre><span class="gp">$</span> duruses-client
-<span class="go">Duruses shell</span>
-<span class="go">  Connection - duruses.connection.Connection class</span>
-<span class="go">  client - duruses.client.Client instance</span>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">$</span> xdclient
+<span class="go">xdserver shell</span>
+<span class="go">  Connection - xdserver.connection.Connection class</span>
+<span class="go">  client - xdserver.client.Client instance</span>
 <span class="gp">&gt;</span>&gt;&gt;
 </pre></div>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p>By default, <strong>duruses-client</strong> connects to 127.0.0.1 on port
+<p>By default, <strong>xdclient</strong> connects to 127.0.0.1 on port
 22972.  Connect to a different host and/or port by using
 <em class="xref">--host</em> and <em class="xref">--port</em>, as in this example:</p>
-<div class="last highlight-console"><div class="highlight"><pre><span class="gp">$</span> duruses-client --host<span class="o">=</span>11.22.33.44 --port<span class="o">=</span>3333
+<div class="last highlight-console"><div class="highlight"><pre><span class="gp">$</span> xdclient --host<span class="o">=</span>11.22.33.44 --port<span class="o">=</span>3333
 </pre></div>
 </div>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p>If you have <a class="reference external" href="http://ipython.scipy.org/">IPython</a> installed, <strong>duruses-client</strong> will favor
+<p>If you have <a class="reference external" href="http://ipython.scipy.org/">IPython</a> installed, <strong>xdclient</strong> will favor
 that over the default Python shell:</p>
-<div class="last highlight-console"><div class="highlight"><pre><span class="gp">$</span> duruses-client
-<span class="go">Duruses shell</span>
-<span class="go">  Connection - duruses.connection.Connection class</span>
-<span class="go">  client - duruses.client.Client instance</span>
+<div class="last highlight-console"><div class="highlight"><pre><span class="gp">$</span> xdclient
+<span class="go">xdserver shell</span>
+<span class="go">  Connection - xdserver.connection.Connection class</span>
+<span class="go">  client - xdserver.client.Client instance</span>
 <span class="go">In [1]:</span>
 </pre></div>
 </div>
 </div>
 <p>In the shell, use the <tt class="xref docutils literal"><span class="pre">client</span></tt> object&#8217;s
-<a title="duruses.client.Client.storage" class="reference external" href="api.html#duruses.client.Client.storage"><tt class="xref docutils literal"><span class="pre">storage()</span></tt></a> method to get a
+<a title="xdserver.client.Client.storage" class="reference external" href="api.html#xdserver.client.Client.storage"><tt class="xref docutils literal"><span class="pre">storage()</span></tt></a> method to get a
 <tt class="xref docutils literal"><span class="pre">durus.client.ClientStorage</span></tt> instance for a named database.
 Once you have that, create a <tt class="xref docutils literal"><span class="pre">Connection</span></tt>
 instance:</p>
@@ -108,10 +108,10 @@ standard Durus API to operate on the database:</p>
 </div>
 <div class="section" id="connect-in-your-own-code">
 <h2>Connect in your own code<a class="headerlink" href="#connect-in-your-own-code" title="Permalink to this headline">¶</a></h2>
-<p>Create a <a title="duruses.client.Client" class="reference external" href="api.html#duruses.client.Client"><tt class="xref docutils literal"><span class="pre">Client</span></tt></a> instance, then perform
+<p>Create a <a title="xdserver.client.Client" class="reference external" href="api.html#xdserver.client.Client"><tt class="xref docutils literal"><span class="pre">Client</span></tt></a> instance, then perform
 operations on it as above in <a class="reference internal" href="#connect-using-the-command-line">Connect using the command-line</a>:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">durus.connection</span> <span class="kn">import</span> <span class="n">Connection</span>
-<span class="kn">from</span> <span class="nn">duruses.client</span> <span class="kn">import</span> <span class="n">Client</span>
+<span class="kn">from</span> <span class="nn">xdserver.client</span> <span class="kn">import</span> <span class="n">Client</span>
 
 <span class="c"># Connect to default server.</span>
 <span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">()</span>
@@ -187,12 +187,12 @@ operations on it as above in <a class="reference internal" href="#connect-using-
         <li class="right" >
           <a href="server.html" title="Server"
              >previous</a> |</li>
-        <li><a href="index.html">duruses v3.9.0 documentation</a> &raquo;</li> 
+        <li><a href="index.html">xdserver v3.9.1 documentation</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">
       &copy; Copyright 2009, ElevenCraft Inc..
-      Last updated on Sep 18, 2009.
+      Last updated on Oct 02, 2009.
       Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 0.6.3.
     </div>
   </body>

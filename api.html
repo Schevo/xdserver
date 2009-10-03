@@ -5,13 +5,13 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>API Reference &mdash; duruses v3.9.0 documentation</title>
+    <title>API Reference &mdash; xdserver v3.9.1 documentation</title>
     <link rel="stylesheet" href="static/default.css" type="text/css" />
     <link rel="stylesheet" href="static/pygments.css" type="text/css" />
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '',
-        VERSION:     '3.9.0',
+        VERSION:     '3.9.1',
         COLLAPSE_MODINDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -19,8 +19,8 @@
     </script>
     <script type="text/javascript" src="static/jquery.js"></script>
     <script type="text/javascript" src="static/doctools.js"></script>
-    <link rel="top" title="duruses v3.9.0 documentation" href="index.html" />
-    <link rel="next" title="Development" href="development.html" />
+    <link rel="top" title="xdserver v3.9.1 documentation" href="index.html" />
+    <link rel="next" title="Changes" href="changes.html" />
     <link rel="prev" title="Client" href="client.html" /> 
   </head>
   <body>
@@ -34,12 +34,12 @@
           <a href="modindex.html" title="Global Module Index"
              accesskey="M">modules</a> |</li>
         <li class="right" >
-          <a href="development.html" title="Development"
+          <a href="changes.html" title="Changes"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="client.html" title="Client"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">duruses v3.9.0 documentation</a> &raquo;</li> 
+        <li><a href="index.html">xdserver v3.9.1 documentation</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -50,12 +50,12 @@
             
   <div class="section" id="api-reference">
 <h1>API Reference<a class="headerlink" href="#api-reference" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="module-duruses.client">
-<h2>duruses.client<a class="headerlink" href="#module-duruses.client" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="module-xdserver.client">
+<h2>xdserver.client<a class="headerlink" href="#module-xdserver.client" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
-<dt id="duruses.client.Client">
-<em class="property">class </em><tt class="descclassname">duruses.client.</tt><tt class="descname">Client</tt><big>(</big><em>host='127.0.0.1'</em>, <em>port=22972</em><big>)</big><a class="headerlink" href="#duruses.client.Client" title="Permalink to this definition">¶</a></dt>
-<dd><p>Connects to a duruses server.</p>
+<dt id="xdserver.client.Client">
+<em class="property">class </em><tt class="descclassname">xdserver.client.</tt><tt class="descname">Client</tt><big>(</big><em>host='127.0.0.1'</em>, <em>port=22972</em><big>)</big><a class="headerlink" href="#xdserver.client.Client" title="Permalink to this definition">¶</a></dt>
+<dd><p>Connects to a xdserver server.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -69,8 +69,8 @@
 </tbody>
 </table>
 <dl class="method">
-<dt id="duruses.client.Client.close">
-<tt class="descname">close</tt><big>(</big><em>db_name</em><big>)</big><a class="headerlink" href="#duruses.client.Client.close" title="Permalink to this definition">¶</a></dt>
+<dt id="xdserver.client.Client.close">
+<tt class="descname">close</tt><big>(</big><em>db_name</em><big>)</big><a class="headerlink" href="#xdserver.client.Client.close" title="Permalink to this definition">¶</a></dt>
 <dd><p>Close the named database.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -85,8 +85,8 @@
 </dd></dl>
 
 <dl class="method">
-<dt id="duruses.client.Client.destroy">
-<tt class="descname">destroy</tt><big>(</big><em>db_name</em><big>)</big><a class="headerlink" href="#duruses.client.Client.destroy" title="Permalink to this definition">¶</a></dt>
+<dt id="xdserver.client.Client.destroy">
+<tt class="descname">destroy</tt><big>(</big><em>db_name</em><big>)</big><a class="headerlink" href="#xdserver.client.Client.destroy" title="Permalink to this definition">¶</a></dt>
 <dd><p>Destroy the named database.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -110,13 +110,13 @@ database on the server.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="duruses.client.Client.disconnect">
-<tt class="descname">disconnect</tt><big>(</big><big>)</big><a class="headerlink" href="#duruses.client.Client.disconnect" title="Permalink to this definition">¶</a></dt>
+<dt id="xdserver.client.Client.disconnect">
+<tt class="descname">disconnect</tt><big>(</big><big>)</big><a class="headerlink" href="#xdserver.client.Client.disconnect" title="Permalink to this definition">¶</a></dt>
 <dd>Disconnect from the server.</dd></dl>
 
 <dl class="method">
-<dt id="duruses.client.Client.list_all">
-<tt class="descname">list_all</tt><big>(</big><big>)</big><a class="headerlink" href="#duruses.client.Client.list_all" title="Permalink to this definition">¶</a></dt>
+<dt id="xdserver.client.Client.list_all">
+<tt class="descname">list_all</tt><big>(</big><big>)</big><a class="headerlink" href="#xdserver.client.Client.list_all" title="Permalink to this definition">¶</a></dt>
 <dd><p>List all databases available on the server.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -129,8 +129,8 @@ database on the server.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="duruses.client.Client.list_open">
-<tt class="descname">list_open</tt><big>(</big><big>)</big><a class="headerlink" href="#duruses.client.Client.list_open" title="Permalink to this definition">¶</a></dt>
+<dt id="xdserver.client.Client.list_open">
+<tt class="descname">list_open</tt><big>(</big><big>)</big><a class="headerlink" href="#xdserver.client.Client.list_open" title="Permalink to this definition">¶</a></dt>
 <dd><p>List open databases on server.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -143,8 +143,8 @@ database on the server.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="duruses.client.Client.open">
-<tt class="descname">open</tt><big>(</big><em>db_name</em><big>)</big><a class="headerlink" href="#duruses.client.Client.open" title="Permalink to this definition">¶</a></dt>
+<dt id="xdserver.client.Client.open">
+<tt class="descname">open</tt><big>(</big><em>db_name</em><big>)</big><a class="headerlink" href="#xdserver.client.Client.open" title="Permalink to this definition">¶</a></dt>
 <dd><p>Open the named database.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -159,10 +159,10 @@ database on the server.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="duruses.client.Client.quit">
-<tt class="descname">quit</tt><big>(</big><big>)</big><a class="headerlink" href="#duruses.client.Client.quit" title="Permalink to this definition">¶</a></dt>
+<dt id="xdserver.client.Client.quit">
+<tt class="descname">quit</tt><big>(</big><big>)</big><a class="headerlink" href="#xdserver.client.Client.quit" title="Permalink to this definition">¶</a></dt>
 <dd><p>Shut down the server process and disconnect.</p>
-<div class="admonition-todo admonition " id="todo-10">
+<div class="admonition-todo admonition " id="todo-15">
 <p class="first admonition-title">Todo</p>
 <p class="last">Determine if it is necessary to keep &#8220;quit&#8221; in the protocol
 or if a server should only be shut down by process control
@@ -171,8 +171,8 @@ on the system that the server is running on.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="duruses.client.Client.server_protocol">
-<tt class="descname">server_protocol</tt><big>(</big><big>)</big><a class="headerlink" href="#duruses.client.Client.server_protocol" title="Permalink to this definition">¶</a></dt>
+<dt id="xdserver.client.Client.server_protocol">
+<tt class="descname">server_protocol</tt><big>(</big><big>)</big><a class="headerlink" href="#xdserver.client.Client.server_protocol" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the protocol used by the server.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -185,8 +185,8 @@ on the system that the server is running on.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="duruses.client.Client.storage">
-<tt class="descname">storage</tt><big>(</big><em>db_name</em><big>)</big><a class="headerlink" href="#duruses.client.Client.storage" title="Permalink to this definition">¶</a></dt>
+<dt id="xdserver.client.Client.storage">
+<tt class="descname">storage</tt><big>(</big><em>db_name</em><big>)</big><a class="headerlink" href="#xdserver.client.Client.storage" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return a Durus storage object for the named database.</p>
 <p>The database is opened on the server if it was not open
 already.</p>
@@ -198,7 +198,7 @@ already.</p>
 </tr>
 <tr class="field"><th class="field-name">Ptype db_name:</th><td class="field-body">string</td>
 </tr>
-<tr class="field"><th class="field-name">Return type:</th><td class="field-body"><a title="duruses.client.ClientStorage" class="reference internal" href="#duruses.client.ClientStorage"><tt class="xref docutils literal"><span class="pre">ClientStorage</span></tt></a></td>
+<tr class="field"><th class="field-name">Return type:</th><td class="field-body"><a title="xdserver.client.ClientStorage" class="reference internal" href="#xdserver.client.ClientStorage"><tt class="xref docutils literal"><span class="pre">ClientStorage</span></tt></a></td>
 </tr>
 </tbody>
 </table>
@@ -207,24 +207,24 @@ already.</p>
 </dd></dl>
 
 <dl class="class">
-<dt id="duruses.client.ClientStorage">
-<em class="property">class </em><tt class="descclassname">duruses.client.</tt><tt class="descname">ClientStorage</tt><big>(</big><em>client</em>, <em>db_name</em><big>)</big><a class="headerlink" href="#duruses.client.ClientStorage" title="Permalink to this definition">¶</a></dt>
-<dd><p>Durus storage for a Duruses database.</p>
+<dt id="xdserver.client.ClientStorage">
+<em class="property">class </em><tt class="descclassname">xdserver.client.</tt><tt class="descname">ClientStorage</tt><big>(</big><em>client</em>, <em>db_name</em><big>)</big><a class="headerlink" href="#xdserver.client.ClientStorage" title="Permalink to this definition">¶</a></dt>
+<dd><p>Durus storage for a xdserver database.</p>
 <p>Follows the <tt class="xref docutils literal"><span class="pre">durus.storage.Storage</span></tt> API.</p>
-<p>Please use <a title="duruses.client.Client.storage" class="reference internal" href="#duruses.client.Client.storage"><tt class="xref docutils literal"><span class="pre">storage()</span></tt></a> to create
+<p>Please use <a title="xdserver.client.Client.storage" class="reference internal" href="#xdserver.client.Client.storage"><tt class="xref docutils literal"><span class="pre">storage()</span></tt></a> to create
 storage instances, rather than creating instances of this class
 directly.</p>
 </dd></dl>
 
 </div>
-<div class="section" id="module-duruses.server">
-<h2>duruses.server<a class="headerlink" href="#module-duruses.server" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="module-xdserver.server">
+<h2>xdserver.server<a class="headerlink" href="#module-xdserver.server" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
-<dt id="duruses.server.Server">
-<em class="property">class </em><tt class="descclassname">duruses.server.</tt><tt class="descname">Server</tt><big>(</big><em>scheduler</em>, <em>path</em>, <em>storage_class=&lt;class 'durus.file_storage.FileStorage'&gt;</em>, <em>host='127.0.0.1'</em>, <em>port=22972</em><big>)</big><a class="headerlink" href="#duruses.server.Server" title="Permalink to this definition">¶</a></dt>
-<dd><p>Provides access to databases for duruses clients.</p>
+<dt id="xdserver.server.Server">
+<em class="property">class </em><tt class="descclassname">xdserver.server.</tt><tt class="descname">Server</tt><big>(</big><em>scheduler</em>, <em>path</em>, <em>storage_class=&lt;class 'durus.file_storage.FileStorage'&gt;</em>, <em>host='127.0.0.1'</em>, <em>port=22972</em><big>)</big><a class="headerlink" href="#xdserver.server.Server" title="Permalink to this definition">¶</a></dt>
+<dd><p>Provides access to databases for xdserver clients.</p>
 <p>In most cases your code will not use this class directly.  Use
-<strong>duruses-server</strong> instead; see <a class="reference external" href="server.html"><em>Server</em></a>.</p>
+<strong>xdserver</strong> instead; see <a class="reference external" href="server.html"><em>Server</em></a>.</p>
 </dd></dl>
 
 </div>
@@ -239,8 +239,8 @@ directly.</p>
             <h3><a href="index.html">Table Of Contents</a></h3>
             <ul>
 <li><a class="reference external" href="">API Reference</a><ul>
-<li><a class="reference external" href="#module-duruses.client">duruses.client</a></li>
-<li><a class="reference external" href="#module-duruses.server">duruses.server</a></li>
+<li><a class="reference external" href="#module-xdserver.client">xdserver.client</a></li>
+<li><a class="reference external" href="#module-xdserver.server">xdserver.server</a></li>
 </ul>
 </li>
 </ul>
@@ -249,8 +249,8 @@ directly.</p>
             <p class="topless"><a href="client.html"
                                   title="previous chapter">Client</a></p>
             <h4>Next topic</h4>
-            <p class="topless"><a href="development.html"
-                                  title="next chapter">Development</a></p>
+            <p class="topless"><a href="changes.html"
+                                  title="next chapter">Changes</a></p>
             <h3>This Page</h3>
             <ul class="this-page-menu">
               <li><a href="sources/api.txt"
@@ -283,17 +283,17 @@ directly.</p>
           <a href="modindex.html" title="Global Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="development.html" title="Development"
+          <a href="changes.html" title="Changes"
              >next</a> |</li>
         <li class="right" >
           <a href="client.html" title="Client"
              >previous</a> |</li>
-        <li><a href="index.html">duruses v3.9.0 documentation</a> &raquo;</li> 
+        <li><a href="index.html">xdserver v3.9.1 documentation</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">
       &copy; Copyright 2009, ElevenCraft Inc..
-      Last updated on Sep 18, 2009.
+      Last updated on Oct 02, 2009.
       Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 0.6.3.
     </div>
   </body>

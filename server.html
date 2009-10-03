@@ -5,13 +5,13 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Server &mdash; duruses v3.9.0 documentation</title>
+    <title>Server &mdash; xdserver v3.9.1 documentation</title>
     <link rel="stylesheet" href="static/default.css" type="text/css" />
     <link rel="stylesheet" href="static/pygments.css" type="text/css" />
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '',
-        VERSION:     '3.9.0',
+        VERSION:     '3.9.1',
         COLLAPSE_MODINDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -19,7 +19,7 @@
     </script>
     <script type="text/javascript" src="static/jquery.js"></script>
     <script type="text/javascript" src="static/doctools.js"></script>
-    <link rel="top" title="duruses v3.9.0 documentation" href="index.html" />
+    <link rel="top" title="xdserver v3.9.1 documentation" href="index.html" />
     <link rel="next" title="Client" href="client.html" />
     <link rel="prev" title="Requirements" href="installing.html" /> 
   </head>
@@ -39,7 +39,7 @@
         <li class="right" >
           <a href="installing.html" title="Requirements"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">duruses v3.9.0 documentation</a> &raquo;</li> 
+        <li><a href="index.html">xdserver v3.9.1 documentation</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -50,38 +50,38 @@
             
   <div class="section" id="server">
 <h1>Server<a class="headerlink" href="#server" title="Permalink to this headline">¶</a></h1>
-<p>Run <strong>duruses-server</strong> to allow clients to access a set of
+<p>Run <strong>xdserver</strong> to allow clients to access a set of
 databases stored in a directory.</p>
 <div class="section" id="prepare-a-directory-for-data-storage">
 <h2>Prepare a directory for data storage<a class="headerlink" href="#prepare-a-directory-for-data-storage" title="Permalink to this headline">¶</a></h2>
 <p>Create a directory to store Durus database files.</p>
-<p>Consider using the <tt class="docutils literal"><span class="pre">.duruses</span></tt> extension to help you remember
+<p>Consider using the <tt class="docutils literal"><span class="pre">.xdserver</span></tt> extension to help you remember
 that it contains Durus database files.</p>
-<div class="highlight-console"><div class="highlight"><pre><span class="gp">$</span> mkdir appdata.duruses
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">$</span> mkdir appdata.xdserver
 </pre></div>
 </div>
 </div>
 <div class="section" id="starting-a-server">
 <h2>Starting a server<a class="headerlink" href="#starting-a-server" title="Permalink to this headline">¶</a></h2>
-<p>Run <strong>duruses-server</strong>, giving it the name of the directory to
+<p>Run <strong>xdserver</strong>, giving it the name of the directory to
 serve from.  The program will respond with the host and port it is
 listening on:</p>
-<div class="highlight-console"><div class="highlight"><pre><span class="gp">$</span> duruses-server appdata.duruses
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">$</span> xdserver appdata.xdserver
 <span class="go">Listening on 127.0.0.1:22972</span>
 </pre></div>
 </div>
 <p>Override the host and/or port by using <em class="xref">--host</em> and
 <em class="xref">--port</em>.  For example, you can listen on all network
 interfaces at port 3333:</p>
-<div class="highlight-console"><div class="highlight"><pre><span class="gp">$</span> duruses-server --host<span class="o">=</span>0.0.0.0 --port<span class="o">=</span>3333 appdata.duruses
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">$</span> xdserver --host<span class="o">=</span>0.0.0.0 --port<span class="o">=</span>3333 appdata.xdserver
 <span class="go">Listening on 0.0.0.0:3333</span>
 </pre></div>
 </div>
 <p>Quiet log output by setting <em class="xref">--loglevel</em>:</p>
-<div class="highlight-console"><div class="highlight"><pre><span class="gp">$</span> duruses-server --loglevel<span class="o">=</span>100
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">$</span> xdserver --loglevel<span class="o">=</span>100
 </pre></div>
 </div>
-<div class="admonition-todo admonition " id="todo-6">
+<div class="admonition-todo admonition " id="todo-16">
 <p class="first admonition-title">Todo</p>
 <p class="last">Replace <em class="xref">--loglevel</em> with <em class="xref">--verbose</em> and
 <em class="xref">--quiet</em>.</p>
@@ -89,13 +89,13 @@ interfaces at port 3333:</p>
 </div>
 <div class="section" id="stopping-a-server">
 <h2>Stopping a server<a class="headerlink" href="#stopping-a-server" title="Permalink to this headline">¶</a></h2>
-<p>Press <tt class="docutils literal"><span class="pre">Control-C</span></tt> where duruses-server is running.  Duruses will
+<p>Press <tt class="docutils literal"><span class="pre">Control-C</span></tt> where xdserver is running.  xdserver will
 disconnect all connected clients and stop listening for new
 connections.</p>
 </div>
 <div class="section" id="running-a-server-in-the-background">
 <h2>Running a server in the background<a class="headerlink" href="#running-a-server-in-the-background" title="Permalink to this headline">¶</a></h2>
-<div class="admonition-todo admonition " id="todo-7">
+<div class="admonition-todo admonition " id="todo-17">
 <p class="first admonition-title">Todo</p>
 <p class="last">Describe methods for running a server in the background.</p>
 </div>
@@ -162,12 +162,12 @@ connections.</p>
         <li class="right" >
           <a href="installing.html" title="Requirements"
              >previous</a> |</li>
-        <li><a href="index.html">duruses v3.9.0 documentation</a> &raquo;</li> 
+        <li><a href="index.html">xdserver v3.9.1 documentation</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">
       &copy; Copyright 2009, ElevenCraft Inc..
-      Last updated on Sep 18, 2009.
+      Last updated on Oct 02, 2009.
       Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 0.6.3.
     </div>
   </body>

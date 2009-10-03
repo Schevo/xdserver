@@ -2,7 +2,7 @@
  Server
 ========
 
-Run :program:`duruses-server` to allow clients to access a set of
+Run :program:`xdserver` to allow clients to access a set of
 databases stored in a directory.
 
 
@@ -11,24 +11,24 @@ Prepare a directory for data storage
 
 Create a directory to store Durus database files.
 
-Consider using the :file:`.duruses` extension to help you remember
+Consider using the :file:`.xdserver` extension to help you remember
 that it contains Durus database files.
 
 .. code-block:: console
 
-    $ mkdir appdata.duruses
+    $ mkdir appdata.xdserver
 
 
 Starting a server
 =================
 
-Run :program:`duruses-server`, giving it the name of the directory to
+Run :program:`xdserver`, giving it the name of the directory to
 serve from.  The program will respond with the host and port it is
 listening on:
 
 .. code-block:: console
 
-    $ duruses-server appdata.duruses
+    $ xdserver appdata.xdserver
     Listening on 127.0.0.1:22972
 
 Override the host and/or port by using :option:`--host` and
@@ -37,14 +37,14 @@ interfaces at port 3333:
 
 .. code-block:: console
 
-    $ duruses-server --host=0.0.0.0 --port=3333 appdata.duruses
+    $ xdserver --host=0.0.0.0 --port=3333 appdata.xdserver
     Listening on 0.0.0.0:3333
 
 Quiet log output by setting :option:`--loglevel`:
 
 .. code-block:: console
 
-    $ duruses-server --loglevel=100
+    $ xdserver --loglevel=100
 
 .. todo::
 
@@ -55,7 +55,7 @@ Quiet log output by setting :option:`--loglevel`:
 Stopping a server
 =================
 
-Press :kbd:`Control-C` where duruses-server is running.  Duruses will
+Press :kbd:`Control-C` where xdserver is running.  xdserver will
 disconnect all connected clients and stop listening for new
 connections.
 
