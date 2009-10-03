@@ -34,9 +34,6 @@ setup(
         'cogen >= 0.2.1, < 0.3',
         'Durus >= 3.9, < 4.0',
         ],
-    dependency_links = [
-        'http://schevo.org/eggs/',
-        ],
     entry_points="""
     [console_scripts]
     xdserver = xdserver.server:main
